@@ -7,3 +7,6 @@
 如果1的路径是Aimer-generator/Aimer-generator-basic 那么2的路径就是 Aimer - generator
 （2）FreeMarker模板
 如何创建在FreeMarkerTest文件和DynamicGenerator中都有标明
+
+>2025/4/1
+命令行开发

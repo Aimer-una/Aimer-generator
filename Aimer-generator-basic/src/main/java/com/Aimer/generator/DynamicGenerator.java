@@ -13,13 +13,14 @@ import java.io.Writer;
 
 public class DynamicGenerator {
     public static void main(String[] args) throws IOException, TemplateException {
-        String projectPath = System.getProperty("user.dir") + File.separator + "Aimer-generator-basic";
+        String projectPath = System.getProperty("user.dir");  // + File.separator + "Aimer-generator-basic";
+        System.out.println("projectPath:" + projectPath);
         String inputPath = projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
-        System.out.println(inputPath);
+        System.out.println("inputPut:" + inputPath);
         String outputPath = projectPath + File.separator + "MainTemplate.java";
-        System.out.println(outputPath);
+        System.out.println("outputPath:" + outputPath);
         MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
-        mainTemplateConfig.setAuthor("Aimer");
+        mainTemplateConfig.setAuthor("Aimer2");
         mainTemplateConfig.setLoop(false);
         mainTemplateConfig.setOutputText("求和结果：");
         doGenerate(inputPath, outputPath, mainTemplateConfig);
@@ -40,7 +41,7 @@ public class DynamicGenerator {
 
         // 指定模板文件所在的路径
         File templateDir = new File(inputPath).getParentFile();
-        System.out.println(templateDir);
+        System.out.println("templateDir:" + templateDir);
         configuration.setDirectoryForTemplateLoading(templateDir);
 
         // 设置模板文件使用的字符集
@@ -50,7 +51,7 @@ public class DynamicGenerator {
 
         // 获取文件名
         String templateName = new File(inputPath).getName();
-        System.out.println(templateName);
+        System.out.println("templateName" + templateName);
 
         // 创建模板对象加载指定模板
         Template template = configuration.getTemplate(templateName);

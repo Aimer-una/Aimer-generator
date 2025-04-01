@@ -13,8 +13,10 @@ public class StaticGenerator {
     public static void main(String[] args) {
         String propertyPath = System.getProperty("user.dir");
         System.out.println(propertyPath); // 获取路径Aimer-generator
+        File parentFile = new File(propertyPath).getParentFile();
+        System.out.println(parentFile);
         //输入路径
-        String inputPath = propertyPath + File.separator + "Aimer-generator-demo-project" + File.separator + "acm-template";
+        String inputPath = parentFile + File.separator + "Aimer-generator-demo-project" + File.separator + "acm-template";
         //输出路径
         String outPath = propertyPath;
         //复制
