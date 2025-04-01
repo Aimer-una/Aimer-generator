@@ -11,6 +11,7 @@ public class MainGenerator {
 
         //1.静态文件生成
         String propertyPath = System.getProperty("user.dir");
+        System.out.println(propertyPath);
         //输入路径
         String inputPath = propertyPath + File.separator + "Aimer-generator-demo-project" + File.separator + "acm-template";
         //输出路径

@@ -5,17 +5,19 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
-
 public class DynamicGenerator {
     public static void main(String[] args) throws IOException, TemplateException {
         String projectPath = System.getProperty("user.dir") + File.separator + "Aimer-generator-basic";
         String inputPath = projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
+        System.out.println(inputPath);
         String outputPath = projectPath + File.separator + "MainTemplate.java";
+        System.out.println(outputPath);
         MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
         mainTemplateConfig.setAuthor("Aimer");
         mainTemplateConfig.setLoop(false);
@@ -38,6 +40,7 @@ public class DynamicGenerator {
 
         // 指定模板文件所在的路径
         File templateDir = new File(inputPath).getParentFile();
+        System.out.println(templateDir);
         configuration.setDirectoryForTemplateLoading(templateDir);
 
         // 设置模板文件使用的字符集
@@ -45,12 +48,14 @@ public class DynamicGenerator {
 
         configuration.setNumberFormat("0.######");
 
-        // 创建模板对象，加载指定模板
+        // 获取文件名
         String templateName = new File(inputPath).getName();
+        System.out.println(templateName);
+
+        // 创建模板对象加载指定模板
         Template template = configuration.getTemplate(templateName);
 
-
-
+        // 指定生成文件的路径和名称
         Writer out = new FileWriter(outputPath);
 
         template.process(model, out);
