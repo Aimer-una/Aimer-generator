@@ -8,7 +8,14 @@ import java.io.IOException;
 
 public class MainGenerator {
     public static void main(String[] args) throws TemplateException, IOException {
+        MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
+        mainTemplateConfig.setAuthor("Aimer");
+        mainTemplateConfig.setLoop(true);
+        mainTemplateConfig.setOutputText("求和结果：");
+        doGenerator(mainTemplateConfig);
+    }
 
+    public static void doGenerator(Object model) throws TemplateException, IOException {
         //1.静态文件生成
         String propertyPath = System.getProperty("user.dir");
         System.out.println("propertyPath:" + propertyPath);
@@ -27,14 +34,9 @@ public class MainGenerator {
         String dynamicInputPath = propertyPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
         System.out.println("dynamicInputPath:" + dynamicInputPath);
 
-        String dynamicOutputPath = propertyPath + File.separator + "MainTemplate.java";
+        String dynamicOutputPath = outPath + File.separator + "acm-template/src/com/yupi/acm/MainTemplate.java";
         System.out.println("dynamicOutputPath:" + dynamicOutputPath);
 
-        MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
-        mainTemplateConfig.setAuthor("Aimer");
-        mainTemplateConfig.setLoop(true);
-        mainTemplateConfig.setOutputText("求和结果：");
-        DynamicGenerator.doGenerate(dynamicInputPath, dynamicOutputPath, mainTemplateConfig);
-
+        DynamicGenerator.doGenerate(dynamicInputPath, dynamicOutputPath, model);
     }
 }
