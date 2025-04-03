@@ -3,6 +3,7 @@
 .idea
 Aimer-generator.iml
 Aimer-generator-basic.iml
+generated
 
 ### Maven template
 target/
