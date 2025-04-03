@@ -6,7 +6,6 @@ import cn.hutool.core.util.StrUtil;
 import com.Aimer.maker.generator.file.DynamicFileGenerator;
 import com.Aimer.maker.meta.Meta;
 import com.Aimer.maker.meta.MetaManager;
-import freemarker.ext.jsp.TaglibFactory;
 import freemarker.template.TemplateException;
 
 import java.io.File;

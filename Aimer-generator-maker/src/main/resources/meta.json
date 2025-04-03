@@ -3,7 +3,7 @@
   "description": "ACM 示例模板生成器",
   "basePackage": "com.Aimer",
   "version": "1.0",
-  "author": "yupi",
+  "author": "Aimer",
   "createTime": "2023-11-22",
   "fileConfig": {
     "inputRootPath": "D:/code/Aimer-generator/Aimer-generator-demo-project/acm-template-pro",
